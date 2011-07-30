@@ -1,0 +1,11 @@
+{ "name": "proxy-by-url"
+, "version": "0.0.0"
+, "description": "custom logic for node-http-proxy to proxy basedon incoming url"
+, "homepage": "http://github.com/dominictarr/proxy-by-url"
+, "repository": 
+  { "type": "git"
+  , "url": "https://github.com/dominictarr/proxy-by-url.git" }
+, "dependencies": {}
+, "devDependencies": {}
+, "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://bit.ly/dominictarr)"
+, "scripts": { "test": "meta-test test/*.js" } }
