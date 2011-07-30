@@ -13,7 +13,10 @@ function matcher (url, dest) {
   // storing them in an array - on each request, if the URL matches one that has
   // a function stored for it, the function will be called.
   return function (url) {
-
+    var m = r(url)
+    if (!m) {
+      return;
+    }
     var path = url.slice(m[0].length);
     console.log('proxy:', url, '->', dest);
     return {url: path, dest: dest};
@@ -50,6 +53,6 @@ module.exports = function (urls) {
         return proxy.proxyRequest(req, res, m.dest);
       }
     }
-    next() //did not have a rule for this request. fall back to next middleware.
+    next() //if there wasno matching rule, fall back to next middleware.
   }
 }
