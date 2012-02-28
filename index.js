@@ -5,15 +5,15 @@
 //
 
 function matcher (url, dest) {
-  // First, turn the URL into a regex.  
+  // First, turn the URL into a regex.
   // NOTE: Turning user input directly into a Regular Expression is NOT SAFE.
   var r = new RegExp(url.replace(/\//, '\\/'));
-  // This next block of code may look a little confusing. 
+  // This next block of code may look a little confusing.
   // It returns a closure (anonymous function) for each URL to be matched,
   // storing them in an array - on each request, if the URL matches one that has
   // a function stored for it, the function will be called.
   return function (url) {
-    var m = r(url)
+    var m = r.exec(url);
     if (!m) {
       return;
     }
