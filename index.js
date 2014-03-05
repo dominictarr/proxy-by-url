@@ -53,6 +53,6 @@ module.exports = function (urls) {
         return proxy.proxyRequest(req, res, m.dest);
       }
     }
-    next() //if there wasno matching rule, fall back to next middleware.
+    next(); // if there was no matching rule, fall back to next middleware.
   }
 }
