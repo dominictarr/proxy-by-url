@@ -50,7 +50,7 @@ module.exports = function (urls) {
         // If routing to a server on another domain, the hostname in the request must be changed.
         req.headers.host = m.host;
         // Once any changes are taken care of, this line makes the magic happen.
-        return proxy.proxyRequest(req, res, m.dest);
+        return proxy.proxyRequest(req, res, {target: m.dist});
       }
     }
     next(); // if there was no matching rule, fall back to next middleware.
